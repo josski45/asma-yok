@@ -507,29 +507,15 @@ with col_left:
         with st.status("Testing LED...", expanded=True) as status:
             st.write("🟢 Hijau...")
             send_led("green_on")
-            time.sleep(0.5)
-            send_led("yellow_off")
-            send_led("red_off")
-            time.sleep(1.5)
+            time.sleep(2)
             
             st.write("🟡 Kuning...")
             send_led("yellow_on")
-            time.sleep(0.5)
-            send_led("green_off")
-            send_led("red_off")
-            time.sleep(1.5)
+            time.sleep(2)
             
             st.write("🔴 Merah...")
             send_led("red_on")
-            time.sleep(0.5)
-            send_led("green_off")
-            send_led("yellow_off")
-            time.sleep(1.5)
-            
-            st.write("✨ Semua OFF...")
-            send_led("green_off")
-            send_led("yellow_off")
-            send_led("red_off")
+            time.sleep(2)
             
             status.update(label="Test selesai!", state="complete")
 
