@@ -18,7 +18,7 @@ TOPIC_DATA = "projek/asma/data_sensor"
 TOPIC_LED = "projek/asma/kontrol_led"
 TOPIC_PREDICTION = "projek/asma/prediction"
 MAX_POINTS = 100
-MODEL_PATH = "svm_rbf.pkl"  # Model terbaik
+MODEL_PATH = "naive_bayes.pkl"
 
 # ==================== LOAD ML MODEL ====================
 @st.cache_resource
@@ -28,7 +28,6 @@ def load_model():
         return model, None
     except Exception as e:
         error_msg = str(e)
-        # Cek jika error terkait kompatibilitas dtype
         if "incompatible dtype" in error_msg or "node array" in error_msg:
             return None, "⚠️ Model incompatible! Install scikit-learn==1.1.3: pip install scikit-learn==1.1.3"
         return None, f"❌ Gagal load model: {error_msg}"
@@ -535,7 +534,7 @@ with col_right:
 
 # Footer
 if model:
-    model_status = "✅ Model loaded (SVM RBF)"
+    model_status = "✅ Model loaded (Naive Bayes)"
 else:
     model_status = "❌ Model error - Retrain model dengan Python 3.11"
 
