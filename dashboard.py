@@ -534,7 +534,7 @@ with col_right:
 
 # Footer
 if model:
-    model_status = "✅ Model loaded (SVM RBF)"
+    model_status = "✅ Model loaded"
 else:
     model_status = "❌ Model error - Retrain model dengan Python 3.11"
 
