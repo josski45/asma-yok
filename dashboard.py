@@ -500,24 +500,6 @@ with col_left:
             send_led("red_on")
             st.toast("Semua LED ON!", icon="✨")
     
-    # Quick test
-    st.markdown('<div class="section-title">🧪 Test</div>', unsafe_allow_html=True)
-    
-    if st.button("🚦 Test Berurutan", use_container_width=True):
-        with st.status("Testing LED...", expanded=True) as status:
-            st.write("🟢 Hijau...")
-            send_led("green_on")
-            time.sleep(2)
-            
-            st.write("🟡 Kuning...")
-            send_led("yellow_on")
-            time.sleep(2)
-            
-            st.write("🔴 Merah...")
-            send_led("red_on")
-            time.sleep(2)
-            
-            status.update(label="Test selesai!", state="complete")
 
 with col_right:
     st.markdown('<div class="section-title">📈 Grafik Real-time</div>', unsafe_allow_html=True)
