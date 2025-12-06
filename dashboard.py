@@ -18,7 +18,7 @@ TOPIC_DATA = "projek/asma/data_sensor"
 TOPIC_LED = "projek/asma/kontrol_led"
 TOPIC_PREDICTION = "projek/asma/prediction"
 MAX_POINTS = 100
-MODEL_PATH = "naive_bayes.pkl"
+MODEL_PATH = "svm_rbf.pkl"
 
 # ==================== LOAD ML MODEL ====================
 @st.cache_resource
@@ -534,7 +534,7 @@ with col_right:
 
 # Footer
 if model:
-    model_status = "✅ Model loaded (Naive Bayes)"
+    model_status = "✅ Model loaded (SVM RBF)"
 else:
     model_status = "❌ Model error - Retrain model dengan Python 3.11"
 
